@@ -3,105 +3,935 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Irawan Yamaha Official | Katalog Motor Yamaha</title>
+
+<title>Irawan Yamaha Official</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0757d9;color:#111}
-header{background:#fff;position:sticky;top:0;z-index:20;box-shadow:0 2px 12px #0002}
-.nav{max-width:1400px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:18px 28px}
-.logo{font-weight:900;font-size:22px}.logo span{color:#0757d9}
-nav a{color:#111;text-decoration:none;font-weight:700;margin-left:28px;font-size:14px}
-.hero{max-width:1400px;margin:auto;padding:55px 28px 25px;color:white}
-.hero h1{font-size:48px;margin:0 0 10px;font-weight:900}.hero p{max-width:700px;font-size:17px;line-height:1.6}
-.tools{max-width:1400px;margin:auto;padding:10px 28px 30px;display:flex;gap:12px;flex-wrap:wrap}
-.search{flex:1;min-width:240px;padding:15px 18px;border:0;border-radius:12px;font-size:15px}
-.filter{padding:14px 18px;border:0;border-radius:12px;background:#111;color:#fff;font-weight:700;cursor:pointer}
-.filter.active{background:#fff;color:#0757d9}
-.grid{max-width:1400px;margin:auto;padding:0 28px 55px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px #0003;display:flex;flex-direction:column}
-.photo{height:235px;background:#f7f7f7;display:flex;align-items:center;justify-content:center;padding:12px}
-.photo img{width:100%;height:100%;object-fit:contain}
-.body{padding:18px}
-.cat{font-size:11px;font-weight:800;color:#666;letter-spacing:.7px}
-h2{font-size:21px;margin:8px 0}.desc{font-size:13px;color:#555;min-height:38px;line-height:1.45}
-.price{font-size:22px;font-weight:900;margin:15px 0}
-.info{display:flex;justify-content:space-between;gap:8px;background:#f4f4f4;border-radius:10px;padding:10px;font-size:11px}.info b{display:block;font-size:13px;margin-top:3px}
-.actions{display:flex;gap:9px;margin-top:14px}.btn{flex:1;padding:12px;border-radius:10px;text-align:center;text-decoration:none;font-weight:800;font-size:13px;border:1px solid #ddd;color:#111;background:#fff;cursor:pointer}.wa{background:#18b957;color:#fff;border-color:#18b957}
-.note{font-size:10px;color:#777;margin-top:10px;line-height:1.4}
-footer{background:#111;color:#fff;text-align:center;padding:30px 20px}
-.float{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#18b957;color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:28px;box-shadow:0 5px 18px #0005;z-index:30}
-.modal{display:none;position:fixed;inset:0;background:#0009;z-index:50;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}
-.modalbox{background:#fff;border-radius:18px;max-width:600px;width:100%;padding:25px;position:relative}.close{position:absolute;right:18px;top:12px;font-size:28px;cursor:pointer}
-@media(max-width:1050px){.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){nav{display:none}.hero h1{font-size:34px}.grid{grid-template-columns:repeat(2,1fr);padding:0 14px 40px}.hero,.tools{padding-left:14px;padding-right:14px}.photo{height:190px}}@media(max-width:500px){.grid{grid-template-columns:1fr}.photo{height:230px}}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f6f9;
+    color:#111;
+}
+
+/* HEADER */
+header{
+    background:#050505;
+    color:white;
+    padding:15px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.3);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#168cff;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#168cff;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(135deg,#0072ff,#001b44);
+    color:white;
+    padding:65px 6%;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+.search{
+    max-width:600px;
+    margin:auto;
+}
+
+.search input{
+    width:100%;
+    padding:16px 20px;
+    border-radius:30px;
+    border:none;
+    font-size:16px;
+    outline:none;
+}
+
+/* CATEGORY */
+.categories{
+    padding:25px 6%;
+    text-align:center;
+    background:white;
+}
+
+.categories button{
+    padding:10px 18px;
+    margin:5px;
+    border:2px solid #0072ff;
+    border-radius:25px;
+    background:white;
+    color:#0072ff;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.categories button:hover,
+.categories button.active{
+    background:#0072ff;
+    color:white;
+}
+
+/* PRODUCT */
+.products{
+    padding:40px 6%;
+}
+
+.products h2{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:30px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,.10);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
+
+.card img{
+    width:100%;
+    height:190px;
+    object-fit:contain;
+    background:#f8f8f8;
+    padding:15px;
+}
+
+.card-content{
+    padding:18px;
+}
+
+.category{
+    color:#0072ff;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.card h3{
+    margin:7px 0;
+    font-size:21px;
+}
+
+.price{
+    font-size:20px;
+    font-weight:bold;
+    color:#111;
+    margin:8px 0;
+}
+
+.finance{
+    background:#eef6ff;
+    padding:10px;
+    border-radius:8px;
+    margin:12px 0;
+    font-size:14px;
+}
+
+.finance b{
+    color:#0072ff;
+}
+
+.actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+}
+
+.btn{
+    padding:11px;
+    border-radius:8px;
+    border:none;
+    cursor:pointer;
+    text-align:center;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.btn-detail{
+    background:#111;
+    color:white;
+}
+
+.btn-wa{
+    background:#20c863;
+    color:white;
+}
+
+.btn-detail:hover{
+    background:#0072ff;
+}
+
+.btn-wa:hover{
+    background:#149d4c;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    z-index:2000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.7);
+    overflow:auto;
+}
+
+.modal-box{
+    background:white;
+    width:92%;
+    max-width:650px;
+    margin:5% auto;
+    border-radius:15px;
+    padding:25px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:20px;
+    top:12px;
+    font-size:30px;
+    cursor:pointer;
+}
+
+.modal-box h2{
+    color:#0072ff;
+    margin-bottom:10px;
+}
+
+.modal-img{
+    width:100%;
+    height:230px;
+    object-fit:contain;
+    background:#f5f5f5;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+/* TABLE */
+.table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+.table th,
+.table td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:left;
+}
+
+.table th{
+    background:#0072ff;
+    color:white;
+}
+
+.table tr:hover{
+    background:#eef6ff;
+}
+
+/* CONTACT */
+.contact{
+    background:#001b44;
+    color:white;
+    text-align:center;
+    padding:50px 6%;
+}
+
+.contact h2{
+    margin-bottom:15px;
+}
+
+.contact a{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 25px;
+    border-radius:30px;
+    background:#20c863;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+    background:#050505;
+    color:#aaa;
+    text-align:center;
+    padding:25px;
+    font-size:14px;
+}
+
+/* FLOATING WA */
+.float-wa{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    background:#20c863;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:27px;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+    z-index:1500;
+}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+    .grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+@media(max-width:800px){
+    nav{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:550px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding:45px 5%;
+    }
+
+    .products{
+        padding:30px 5%;
+    }
+}
 </style>
 </head>
+
 <body>
-<header><div class="nav">
-<div class="logo">IRAWAN <span>YAMAHA</span> OFFICIAL</div>
-<nav><a href="#">HOME</a><a href="#products">PRODUCTS</a><a href="#layanan">LAYANAN</a><a href="#kontak">KONTAK</a></nav>
-</div></header>
 
-<section class="hero">
-<h1>Find Your Yamaha</h1>
-<p>Temukan motor Yamaha pilihan Anda dari MAXI, Classy, Matic, Sport hingga Off-Road. Lihat harga referensi, simulasi DP & angsuran, lalu konsultasikan pembelian langsung melalui WhatsApp.</p>
-</section>
+<!-- HEADER -->
+<header>
 
-<div class="tools">
-<input id="search" class="search" placeholder="Cari motor Yamaha...">
-<button class="filter active" data-cat="SEMUA">SEMUA</button>
-<button class="filter" data-cat="MAXI">MAXI</button>
-<button class="filter" data-cat="CLASSY">CLASSY</button>
-<button class="filter" data-cat="MATIC">MATIC</button>
-<button class="filter" data-cat="SPORT">SPORT</button>
-<button class="filter" data-cat="OFF-ROAD">OFF-ROAD</button>
+<div class="logo">
+IRAWAN <span>YAMAHA</span>
 </div>
 
-<main id="products" class="grid"></main>
+<nav>
+<a href="#home">HOME</a>
+<a href="#products">PRODUCTS</a>
+<a href="#contact">KONTAK</a>
+<a href="https://www.yamaha-motor.co.id/products/" target="_blank">
+YAMAHA
+</a>
+</nav>
 
-<footer id="kontak">
-<b>IRAWAN YAMAHA OFFICIAL</b><br><br>
-Konsultasi pembelian motor Yamaha<br>WhatsApp: 0812-2380-5900
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<h1>IRAWAN YAMAHA OFFICIAL</h1>
+
+<p>
+Temukan Motor Yamaha Impian Anda
+</p>
+
+<div class="search">
+<input
+type="text"
+id="search"
+placeholder="Cari motor Yamaha...">
+</div>
+
+</section>
+
+
+<!-- CATEGORY -->
+<section class="categories">
+
+<button class="active" onclick="filterProduct('all')">
+SEMUA
+</button>
+
+<button onclick="filterProduct('Maxi')">
+MAXI
+</button>
+
+<button onclick="filterProduct('Classy')">
+CLASSY
+</button>
+
+<button onclick="filterProduct('Matic')">
+MATIC
+</button>
+
+<button onclick="filterProduct('Sport')">
+SPORT
+</button>
+
+<button onclick="filterProduct('Off-Road')">
+OFF-ROAD
+</button>
+
+</section>
+
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+
+<h2>DAFTAR MOTOR YAMAHA</h2>
+
+<div class="grid" id="productGrid"></div>
+
+</section>
+
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<span class="close" onclick="closeModal()">×</span>
+
+<h2 id="modalTitle"></h2>
+
+<img id="modalImg" class="modal-img">
+
+<p id="modalPrice"></p>
+
+<h3 style="margin-top:20px;">
+Rincian Simulasi Kredit
+</h3>
+
+<table class="table">
+
+<thead>
+<tr>
+<th>Tenor</th>
+<th>DP</th>
+<th>Angsuran / Bulan</th>
+</tr>
+</thead>
+
+<tbody id="installmentTable">
+</tbody>
+
+</table>
+
+<p style="font-size:12px;color:#777;margin-top:15px;">
+*Angsuran merupakan simulasi dan dapat berubah sesuai
+harga OTR, leasing, tenor, DP, wilayah dan promo yang berlaku.
+</p>
+
+<a id="modalWA"
+class="btn btn-wa"
+style="display:block;margin-top:18px;"
+target="_blank">
+💬 TANYA VIA WHATSAPP
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+<h2>Butuh Informasi Motor Yamaha?</h2>
+
+<p>
+Hubungi Irawan Yamaha melalui WhatsApp
+</p>
+
+<a href="https://wa.me/6281223805900?text=Halo%20Irawan%20Yamaha,%20saya%20ingin%20tanya%20motor%20Yamaha"
+target="_blank">
+
+💬 CHAT WHATSAPP
+
+</a>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+© 2026 Irawan Yamaha Official
+
+<br><br>
+
+Harga OTR dan program kredit dapat berbeda berdasarkan
+wilayah, tipe kendaraan dan promo yang berlaku.
+
+<br><br>
+
+<a
+href="https://www.yamaha-motor.co.id/"
+target="_blank"
+style="color:#168cff;text-decoration:none;">
+
+Website Resmi Yamaha Indonesia
+
+</a>
+
 </footer>
-<a class="float" href="https://wa.me/6281223805900?text=Halo%20Irawan%20Yamaha%20Official,%20saya%20ingin%20konsultasi%20motor." target="_blank">☏</a>
 
-<div id="modal" class="modal"><div class="modalbox"><span class="close" onclick="closeModal()">×</span><div id="modalContent"></div></div></div>
+
+<!-- FLOATING WHATSAPP -->
+<a
+class="float-wa"
+href="https://wa.me/6281223805900?text=Halo%20Irawan%20Yamaha,%20saya%20tertarik%20dengan%20motor%20Yamaha"
+target="_blank">
+
+☎
+
+</a>
+
 
 <script>
-const WA="6281223805900";
-const products=[
-["MAXI","XMAX 250","Premium Maxi untuk touring dan perjalanan jauh.","Rp70.460.000","Rp7.000.000","Rp2.923.693 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/2025092412293259576G76761.png"],
-["MAXI","NMAX","Maxi scooter nyaman untuk harian dan touring.","Rp39.460.000","Rp3.900.000","Rp1.638.300 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/2025111019384188604L75511.png"],
-["MAXI","AEROX ALPHA","Super sport scooter dengan karakter agresif.","Rp31.285.000","Rp3.100.000","Rp1.298.523 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/2026020516255618687C33585.png"],
-["MAXI","LEXI LX 155","Maxi scooter praktis dengan posisi berkendara nyaman.","Rp28.220.000","Rp2.300.000","Rp1.171.138 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/202601210138425928P94164.png"],
-["CLASSY","GRAND FILANO","Classy hybrid scooter dengan desain elegan.","Rp28.665.000","Rp2.500.000","Rp1.211.000 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/2026012314263490145D59534.png"],
-["CLASSY","FAZZIO","Classy hybrid scooter yang stylish dan modern.","Rp22.820.000","Rp1.500.000","Rp977.000 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/2026012315293027645K32651.png"],
-["MATIC","GEAR ULTIMA","Matic tangguh dan bergaya untuk aktivitas sehari-hari.","Rp20.240.000","Rp900.000","Rp871.000 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/202604021124218894J.png"],
-["MATIC","GEAR 125","Matic praktis untuk mobilitas sehari-hari.","Rp19.495.000","Rp800.000","Rp850.000 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/2024031507431441417B35284.png"],
-["MATIC","FREEGO 125","Matic nyaman dengan bagasi dan fitur praktis.","Rp22.865.000","Rp1.000.000","Rp930.000 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/202506091443425485Y97917.png"],
-["MATIC","X-RIDE 125","Matic bergaya adventure untuk berbagai kondisi jalan.","Rp21.135.000","Rp900.000","Rp900.000 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/2025070409402252373C51406.png"],
-["SPORT","XSR 155","Sport heritage dengan desain klasik modern.","Rp40.265.000","Rp3.000.000","Rp1.650.000 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/2025012015110954865E18335.png"],
-["SPORT","R15","Sport bike dengan karakter racing.","Rp42.200.000","Rp3.500.000","Rp1.730.000 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/2024072510414155568H76580.png"],
-["SPORT","R25","Sport bike 250cc untuk performa dan gaya.","Rp76.250.000","Rp7.000.000","Rp3.050.000 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/2025012015411993760O36900.png"],
-["SPORT","MT-15","Naked sport agresif dan lincah.","Rp41.215.000","Rp3.500.000","Rp1.690.000 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/2025012015192887371O6508.png"],
-["SPORT","VIXION 155","Sport harian dengan performa bertenaga.","Rp31.450.000","Rp2.500.000","Rp1.300.000 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/2025012015144954158N49912.png"],
-["OFF-ROAD","WR155R","Motor dual purpose untuk jalan raya dan adventure.","Rp41.275.000","Rp3.500.000","Rp1.690.000 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/2023022109421344125G78257.png"],
-["OFF-ROAD","YZ125X","Motor off-road untuk kebutuhan kompetisi.","Rp99.800.000","Rp10.000.000","Rp4.100.000 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/2026012216283431324H51389.png"],
-["OFF-ROAD","YZ250X","Motor off-road performa tinggi.","Rp132.000.000","Rp13.000.000","Rp5.400.000 x 35","https://www.yamaha-motor.co.id/uploads/products/featured_image/202606031052219193A.png"]
+
+const products = [
+
+{
+name:"XMAX 250",
+category:"Maxi",
+price:"Rp 70.015.000",
+dp:"Rp 5.000.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/2025092412293259576G76761.png"
+},
+
+{
+name:"NMAX",
+category:"Maxi",
+price:"Rp 34.565.000",
+dp:"Rp 2.000.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/2025111019384188604L75511.png"
+},
+
+{
+name:"AEROX ALPHA",
+category:"Maxi",
+price:"Rp 30.700.000",
+dp:"Rp 1.500.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/2026020516255618687C33585.png"
+},
+
+{
+name:"LEXi LX 155",
+category:"Maxi",
+price:"Rp 27.850.000",
+dp:"Rp 1.500.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/202601210138425928P94164.png"
+},
+
+{
+name:"GRAND FILANO",
+category:"Classy",
+price:"Rp 28.665.000",
+dp:"Rp 1.500.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/2026012314263490145D59534.png"
+},
+
+{
+name:"FAZZIO",
+category:"Classy",
+price:"Rp 22.820.000",
+dp:"Rp 1.000.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/2026012315293027645K32651.png"
+},
+
+{
+name:"GEAR ULTIMA",
+category:"Matic",
+price:"Rp 20.240.000",
+dp:"Rp 900.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/202604021124218894J.png"
+},
+
+{
+name:"GEAR 125",
+category:"Matic",
+price:"Rp 19.495.000",
+dp:"Rp 900.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/2024031507431441417B35284.png"
+},
+
+{
+name:"FREEGO 125",
+category:"Matic",
+price:"Rp 22.865.000",
+dp:"Rp 1.000.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/202506091443425485Y97917.png"
+},
+
+{
+name:"X-RIDE 125",
+category:"Matic",
+price:"Rp 21.135.000",
+dp:"Rp 900.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/2025070409402252373C51406.png"
+},
+
+{
+name:"XSR 155",
+category:"Sport",
+price:"Rp 40.265.000",
+dp:"Rp 2.000.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/2025012015110954865E18335.png"
+},
+
+{
+name:"R15",
+category:"Sport",
+price:"Rp 42.200.000",
+dp:"Rp 2.000.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/2024072510414155568H76580.png"
+},
+
+{
+name:"R25",
+category:"Sport",
+price:"Rp 76.250.000",
+dp:"Rp 4.000.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/2025012015411993760O36900.png"
+},
+
+{
+name:"MT-15",
+category:"Sport",
+price:"Rp 41.215.000",
+dp:"Rp 2.000.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/2025012015192887371O6508.png"
+},
+
+{
+name:"VIXION 155",
+category:"Sport",
+price:"Rp 31.450.000",
+dp:"Rp 1.500.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/2025012015144954158N49912.png"
+},
+
+{
+name:"WR155R",
+category:"Off-Road",
+price:"Rp 41.275.000",
+dp:"Rp 2.000.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/2023022109421344125G78257.png"
+},
+
+{
+name:"YZ125X",
+category:"Off-Road",
+price:"Rp 99.800.000",
+dp:"Rp 5.000.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/2026012216283431324H51389.png"
+},
+
+{
+name:"YZ250X",
+category:"Off-Road",
+price:"Rp 132.000.000",
+dp:"Rp 7.000.000",
+image:"https://www.yamaha-motor.co.id/uploads/products/featured_image/202606031052219193A.png"
+}
+
 ];
 
-function waLink(name){return "https://wa.me/"+WA+"?text="+encodeURIComponent("Halo Irawan Yamaha Official, saya tertarik dengan "+name+". Mohon info harga promo, DP, dan angsuran.");}
-function render(){
- const q=document.getElementById("search").value.toLowerCase();
- const cat=document.querySelector(".filter.active").dataset.cat;
- const box=document.getElementById("products"); box.innerHTML="";
- products.filter(p=>(cat==="SEMUA"||p[0]===cat)&&p[1].toLowerCase().includes(q)).forEach((p,i)=>{
- box.innerHTML+=`<article class="card"><div class="photo"><img src="${p[6]}" alt="${p[1]}" onerror="this.style.display='none'"></div><div class="body"><div class="cat">${p[0]}</div><h2>${p[1]}</h2><div class="desc">${p[2]}</div><div class="price">${p[3]}</div><div class="info"><span>DP simulasi<b>${p[4]}</b></span><span>Angsuran estimasi<b>${p[5]}</b></span></div><div class="actions"><button class="btn" onclick="detail(${products.indexOf(p)})">Detail</button><a class="btn wa" href="${waLink(p[1])}" target="_blank">WhatsApp</a></div><div class="note">*Simulasi contoh, bukan penawaran kredit resmi. DP/angsuran final mengikuti dealer/leasing dan wilayah.</div></div></article>`;
- });
+
+function formatRupiah(number){
+
+return "Rp " + number.toLocaleString("id-ID");
+
 }
-function detail(i){let p=products[i];document.getElementById("modalContent").innerHTML=`<div class="cat">${p[0]}</div><h2>${p[1]}</h2><p>${p[2]}</p><h2>${p[3]}</h2><p>DP simulasi: <b>${p[4]}</b><br>Angsuran estimasi: <b>${p[5]}</b></p><a class="btn wa" href="${waLink(p[1])}" target="_blank">Konsultasi WhatsApp</a>`;document.getElementById("modal").classList.add("show")}
-function closeModal(){document.getElementById("modal").classList.remove("show")}
-document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");render()});
-document.getElementById("search").oninput=render; render();
+
+
+function renderProducts(list = products){
+
+const grid = document.getElementById("productGrid");
+
+grid.innerHTML = "";
+
+list.forEach((p,index)=>{
+
+grid.innerHTML += `
+
+<div class="card">
+
+<img
+src="${p.image}"
+alt="${p.name}"
+onerror="this.src='https://via.placeholder.com/500x300?text=Yamaha+${p.name}'">
+
+<div class="card-content">
+
+<div class="category">
+${p.category}
+</div>
+
+<h3>
+${p.name}
+</h3>
+
+<div class="price">
+${p.price}
+</div>
+
+<div class="finance">
+
+DP mulai:
+<b>${p.dp}</b>
+
+<br>
+
+Angsuran:
+<b>Simulasi</b>
+
+</div>
+
+<div class="actions">
+
+<button
+class="btn btn-detail"
+onclick="showDetail(${index})">
+
+📊 Detail
+
+</button>
+
+<a
+class="btn btn-wa"
+target="_blank"
+href="https://wa.me/6281223805900?text=${encodeURIComponent(
+"Halo Irawan Yamaha, saya tertarik dengan Yamaha " + p.name
+)}">
+
+WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+function showDetail(index){
+
+const p = products[index];
+
+document.getElementById("modalTitle").innerText =
+p.name;
+
+document.getElementById("modalImg").src =
+p.image;
+
+document.getElementById("modalPrice").innerHTML =
+"<b>Harga OTR mulai: " + p.price + "</b>";
+
+const table =
+document.getElementById("installmentTable");
+
+table.innerHTML = "";
+
+
+/*
+SIMULASI CICILAN
+Bukan penawaran kredit resmi.
+*/
+
+const dpNumber =
+parseInt(p.dp.replace(/\D/g,""));
+
+const priceNumber =
+parseInt(p.price.replace(/\D/g,""));
+
+const tenors = [24,30,35,36,48];
+
+tenors.forEach(tenor=>{
+
+let pokok =
+Math.max(priceNumber-dpNumber,0);
+
+let bunga =
+pokok * 0.01 * tenor;
+
+let angsuran =
+Math.round((pokok+bunga)/tenor);
+
+table.innerHTML += `
+
+<tr>
+
+<td>${tenor} bulan</td>
+
+<td>${p.dp}</td>
+
+<td>
+<b>${formatRupiah(angsuran)}</b>
+</td>
+
+</tr>
+
+`;
+
+});
+
+
+document.getElementById("modalWA").href =
+"https://wa.me/6281223805900?text=" +
+encodeURIComponent(
+"Halo Irawan Yamaha, saya ingin menanyakan simulasi kredit Yamaha "
++ p.name
+);
+
+
+document.getElementById("modal").style.display =
+"block";
+
+}
+
+
+function closeModal(){
+
+document.getElementById("modal").style.display =
+"none";
+
+}
+
+
+window.onclick = function(event){
+
+const modal =
+document.getElementById("modal");
+
+if(event.target === modal){
+
+closeModal();
+
+}
+
+}
+
+
+/* FILTER */
+
+function filterProduct(category){
+
+if(category === "all"){
+
+renderProducts(products);
+
+}else{
+
+renderProducts(
+products.filter(
+p => p.category === category
+)
+);
+
+}
+
+}
+
+
+/* SEARCH */
+
+document.getElementById("search")
+.addEventListener("input",function(){
+
+const keyword =
+this.value.toLowerCase();
+
+const result =
+products.filter(p =>
+p.name.toLowerCase().includes(keyword) ||
+p.category.toLowerCase().includes(keyword)
+);
+
+renderProducts(result);
+
+});
+
+
+/* LOAD */
+
+renderProducts();
+
 </script>
+
 </body>
 </html>
