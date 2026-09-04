@@ -819,7 +819,7 @@ parseInt(p.dp.replace(/\D/g,""));
 const priceNumber =
 parseInt(p.price.replace(/\D/g,""));
 
-const tenors = [24,30,35];
+const tenors = [24,29,35];
 
 tenors.forEach(tenor=>{
 
@@ -827,7 +827,7 @@ let pokok =
 Math.max(priceNumber-dpNumber,0);
 
 let bunga =
-pokok * 0.1,55 * tenor;
+pokok * 0.0155 * tenor;
 
 let angsuran =
 Math.round((pokok+bunga)/tenor);
